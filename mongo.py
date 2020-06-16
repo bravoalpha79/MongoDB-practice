@@ -1,11 +1,13 @@
 import pymongo
 import os
-if os.path.exists("env.py"):
-  import env 
 
-MONGODB_URI = os.getenv("MONGO_URI")
-DBS_NAME = "myTestDB"
-COLLECTION_NAME = "myFirstMDB"
+if os.path.exists("env.py"):
+    import env
+
+
+MONGODB_URI = os.environ.get("MONGO_URI")
+DBS_NAME = os.environ.get("DB_NAME")
+COLLECTION_NAME = os.environ.get("COLLECTION")
 
 
 def mongo_connect(url):
